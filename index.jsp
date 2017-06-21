@@ -1,8 +1,8 @@
 <html>
 <head>
 </head>
-<body class="CMDBuildRelationsGraphBody">
-	<div hidden="true" id="cy">
+<body  <class="CMDBuildRelationsGraphBody">
+	<div hidden="true" id="cy"> <!-- Body -->
 		<!--  Cytoscape -->
 	</div>
 	<!-- portlet CMDBuild -->
