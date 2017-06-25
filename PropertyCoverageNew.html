@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Building Coverage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+        /*.well
+        {
+            height: 200px;
+            width: 50%;
+            background-color: powderblue;
+        }*/
+        /* Add a gray background color and some padding to the footer */
+        /*footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }*/
+
+    </style>
+	
+</head>
+<body style="background-color:lightcyan">
+<div class = "container">
+    <div class="jumbotron" style = "background-color: #dff0d8;"><!--color for light green in Bootstrap-->
+        <h2 class = "text-center">Property Coverage</h2>
+        <p class = "text-center">    What kinds of assets would you like to provide coverage for</p>
+        <form>
+            <div class = "row">
+                <div class = "container">
+                    <div class = "col-sm-3 col-sm-offset-3">
+                    <div class="checkbox ">
+                        <label  ><input type="checkbox" name = 'property' value = "building">Building</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name = 'property' value = "automobiles">Automobiles</label>
+                    </div>
+                    <div class="checkbox">
+                        <label id = "utilities"><input type="checkbox" 
+						name = 'property' value = "utilities" >Utilities</label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <p class = "text-center"><button class = "btn btn-default btn-large btn-success" type = "button" value = "Submit">Next</button></p>
+            </div>
+			<!-- <p id="demo"></p>  -->
+         </form>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+            <span>1 of 2</span>
+        </div>
+    </div>
+
+</div><!-- /.container --
+<!-- Placed at the end of the document so the pages load faster -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+
+/*
+           var build = document.getElementById('building');
+		   var auto = document.getElementById('automobiles');
+		   var utilities = document.getElementById('utilities');
+			var urls = [];
+		   
+		   if(build.checked)
+		   {
+		   goToUrl('http://box1url.com');
+		   }
+		   
+		   if(auto.checked)
+		   {
+		    goToUrl('http://box1url.com');
+		   }
+		   
+		   if(utilities.checked)
+		   {
+		    goToUrl('http://box1url.com');
+		   }
+		   
+		   urls.ForEach(function(url){
+		   goToUrl(url);
+		   });
+*/
+</script>
+<script>
+	
+	 $(document).ready(function() {
+        $("button").click(function(){
+            var fav = [];
+            $.each($("input[name='property']:checked"), function(){            
+                fav.push($(this).val());
+			fav.toString();
+			//document.getElementById("demo").innerHTML = fav;
+            });
+			//console.log(fav);
+			 for(var i=0;i<fav.length;i++)
+			{
+				if(fav[i] == 'automobiles')
+				{
+				window.location = ('http://www.automobile.com/');
+				}
+				else if (fav[i]== 'building'){
+				window.location = "BuildingImport.html"
+				//window.location = ('https://www.google.com');
+				}
+				else 
+				{
+				window.location = ('https://www.google.co.in/?gws_rd=ssl#q=utilities');
+				}
+			} 
+          //  alert("Your Selected values are: " + fav.join(", "));
+        });
+    });
+	
+</script>
+
+
+</body>
+</html>
